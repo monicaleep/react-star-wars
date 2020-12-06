@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Starship = (props) => {
   console.log(props.location.state)
@@ -7,7 +8,9 @@ const Starship = (props) => {
   //   console.log(id)
   // },[])
   return (
-    <div>{props.location.state.name}</div>
+    <div>{props.location.state.name}
+      <Link to='/'>Home</Link>
+    </div>
   );
 }
 
