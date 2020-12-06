@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Starship = (props) => {
-  console.log(props.location.state)
+const Starship = ({location : {state}}) => {
+  console.log(state)
   // useEffect(()=>{
   //   const {id} = props.match.params
   //   console.log(id)
   // },[])
   return (
-    <div>{props.location.state.name}
+    <div>{state.name}
+      Length: {state.length}ft
+      Max Speed: {state.max_atmosphering_speed}mph
       <Link to='/'>Home</Link>
     </div>
   );
