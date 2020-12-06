@@ -1,0 +1,19 @@
+.card{
+  background-color: darkslategray;
+  color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+ a{
+  color: lightblue;
+  text-decoration: none;
+  margin: 20px;
+  width: 20%;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* display: block; */
+}
