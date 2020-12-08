@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
+import Pilot from './Pilot.js'
+
 const Starship = ({location : {state}}) => {
   const [pilots, setPilots] = useState([])
   const [loaded, setLoaded] = useState(false)
@@ -11,11 +13,11 @@ const Starship = ({location : {state}}) => {
     Promise.all(state.pilots.map(pilot=>axios.get(pilot)))
     .then(responses=>{
       responses.forEach(response=>pilotsArray.push(response.data))
-      console.log(pilotsArray)
+      // console.log(pilotsArray)
       setPilots(pilotsArray)
       setLoaded(true)
     });
-  },[state.pilots])
+  },[state.pilots]) // React yelled at me til I put something in the array.
 
   const displayPilots = () => {
     if (state.pilots.length===0){
@@ -23,9 +25,7 @@ const Starship = ({location : {state}}) => {
     } else if (!loaded){
       return (<p>Loading...</p>)
     } else{
-      return (
-          pilots.map((pilot,idx)=>(<p key={idx}>{pilot.name}</p>))
-      )
+      return pilots.map((pilot,idx)=><Pilot key={idx} name={pilot.name} />)
     }
   }
   return (
