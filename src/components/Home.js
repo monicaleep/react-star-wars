@@ -13,30 +13,24 @@ const Home = ({
   const display = () => {
     return starships.map(ship => (
 
-      <
-      Link to = {
+      <Link to = {
         {
           pathname: '/starship',
           state: ship
         }
       }
-      key = {
-        ship.name
-      } >
-      <
-      div className = 'card' > {
-        ship.name
-      } <
-      /div> <
-      /Link>
+      key = {ship.name}>
+        <div className = 'card' >
+          {ship.name}
+        </div>
+      </Link>
     ))
   }
 
-  return ( <
-    > {
-      display()
-    } < />
-  );
+  return (
+    <>
+      {display()} 
+    < />);
 }
 
 

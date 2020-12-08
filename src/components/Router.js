@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import { Route } from 'react-router-dom'
 import Starship from './Starship'
-
 import Home from './Home'
 
 const Router = () =>{
@@ -22,17 +21,17 @@ const Router = () =>{
       setLoading(false)
     })
   },[]);
+
+
   const display = () => {
     if(loading){
       return 'Loading...'
     } else{
       return (
         <>
-        <Route exact path="/" component={()=>(<Home starships={starships}/>)} />
-        <Route path='/starship' render={({location}) =>
-            <Starship location={location}/>
-          }/>
-          </>
+          <Route exact path="/" component={()=>(<Home starships={starships}/>)} />
+          <Route path='/starship' render={({location}) =><Starship location={location}/>}/>
+        </>
       )
     }
   }
