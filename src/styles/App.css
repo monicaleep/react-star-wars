@@ -5,4 +5,18 @@
   width: 70%;
   margin: 0 auto;
   justify-content: space-evenly;
+  padding-top: 100px;
+}
+
+.navbar{
+  height: 80px;
+  background-color: darkslategray;
+  color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  position: fixed;
+  width: 100%;
+
 }
